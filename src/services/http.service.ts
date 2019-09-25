@@ -1,7 +1,5 @@
 import { ajax } from 'rxjs/ajax';
-import { map, catchError, finalize } from 'rxjs/operators'
-import { Observable, of } from 'rxjs';
-import throwError from 'rxjs';
+import { map} from 'rxjs/operators';
 
 export default class HttpService {
     public headers: any;
@@ -13,7 +11,7 @@ export default class HttpService {
     }
     callServicePOST(action: string, requestData: any) {
         let serviceURL: string;
-        serviceURL = "url";
+        serviceURL = "url"+action;
         let contentType = 'application/x-www-form-urlencoded';
         let headerOptions = { 'Content-Type': contentType };
         return ajax.post(serviceURL, requestData, headerOptions).pipe(map((res: any) => this.processRespData(res)))
@@ -21,24 +19,21 @@ export default class HttpService {
     callServicePOSTSync(action: string, requestData: any) {
         requestData.UAPAPPID = '';
         let serviceURL: string;
-        let localversion: any = Math.floor(Math.random() * 99999);
-        let requstAction: any;
-        requstAction = action;
-        let dbSessionId = (window as any).dbSessionId;
-        serviceURL = action + "?ver=" + localversion + "&dbs=" + dbSessionId;
+        let localversion: any = Math.floor(Math.random() * 99999);   
+        serviceURL = action + "?ver=" + localversion ;
         let contentType = 'application/json';
-        let headerOptions = { 'Content-Type': contentType };
+        // let headerOptions = { 'Content-Type': contentType };
         let xhr = new XMLHttpRequest()
         xhr.open("POST", serviceURL, false);
         xhr.setRequestHeader("Content-Type", contentType);
         xhr.send(JSON.stringify(requestData));
     }
     processRespData(serviceResponse: any) {
-        let responseObj = serviceResponse.response;
+        // let responseObj = serviceResponse.response;
         let validatedResp: any = { status: true, errorMessage: '', payload: {} };
-        let serResp: any = responseObj.serResp;
+        // let serResp: any = responseObj.serResp;
         validatedResp.status = false;
-        validatedResp.errorMessage = '';
+        validatedResp.errorMessage = serviceResponse;
         return validatedResp;
     }
 }

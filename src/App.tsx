@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { RootEpic} from './epics/index';
 import { RootReducer } from './reducers/index';
@@ -27,8 +26,8 @@ class App extends Component<{},{}>{
                     </Switch>
                 </MemoryRouter>
             </Provider>
-    // <Counter />, document.getElementById('main')
         )
     }
 }
 
+export default App;

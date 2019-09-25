@@ -1,12 +1,27 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
+    "outDir": "./dist",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es6",
+      "dom.iterable",
+      "esnext"
+    ], 
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "react-native",
+    "removeComments": true,
+    "moduleResolution": "node",
     "module": "es6",
-    "target": "es6",
-    "jsx": "react",
-    "allowJs": true
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types", "./typings"],
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true
+    
   }
 }
 

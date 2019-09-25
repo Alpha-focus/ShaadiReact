@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {loginAction} from '../actions/shaadi.action';
 
@@ -29,7 +29,7 @@ class Counter extends React.Component<any,any> {
     );
   }
 }
-const mapDispatchToProps=(state:any)=>{
+const mapDispatchToProps=()=>{
   loginAction:loginAction
 }
 

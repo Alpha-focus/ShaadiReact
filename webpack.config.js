@@ -1,7 +1,3 @@
-// const helpers =require('./helpers')
-// const webpackMerge =require('webpack-merge');
-// const moduleName =helpers.getModuleName();
-// let webpackFileName = "webpack."+moduleame
 const path = require('path');
 module.exports = {
     entry: './src/App.tsx',
@@ -18,6 +14,7 @@ module.exports = {
             {
                 test: /\.(ts|tsx)$/,
                 loader: 'awesome-typescript-loader',
+                exclude:'/node_modules'
             },
         ],
     },
