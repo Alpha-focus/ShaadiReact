@@ -5,7 +5,7 @@ import { RootEpic} from './epics/index';
 import { RootReducer } from './reducers/index';
 import Counter from './components/Counter';
 import { Provider } from 'react-redux';
-import { MemoryRouter , Switch, Route } from "react-router"
+import { MemoryRouter } from "react-router"
 
 
 const epicMiddleware= createEpicMiddleware();
@@ -15,19 +15,19 @@ const store =createStore(
 );
 epicMiddleware.run(RootEpic)
 
-class App extends Component<{},{}>{
+class App extends Component<any,any>{
 
     render(){
         return (
             <Provider store={store}>
             <MemoryRouter>
-                <Switch>
+                {/* <Switch>
                     <Route path="/" compnent={Counter}/>
-                    </Switch>
+                    </Switch> */}
                 </MemoryRouter>
+                <Counter/>
             </Provider>
         )
     }
 }
-
 export default App;

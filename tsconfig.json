@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./dist/",
     "target": "es5",
     "lib": [
       "dom",
@@ -10,7 +10,7 @@
     ], 
     "allowJs": true,
     "checkJs": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "removeComments": true,
     "moduleResolution": "node",
     "module": "es6",
@@ -22,6 +22,9 @@
     "noUnusedParameters": true,
     "strict": true
     
-  }
+  },
+  "include": [
+    "./src/**/*"
+  ]
 }
 

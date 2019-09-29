@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "start:dev": "webpack-dev-server --hot --inline --config ./webpack.config.js --progress --colors --open"
+    "build": "./node_modules/.bin/webpack",
+    "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "react-router": "^5.1.0",
     "redux-observable": "^1.2.0",
     "rxjs": "^6.5.3",
+    "source-map-loader": "^0.2.4",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
