@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack",
-    "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline"
+    "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline --mode development"
   },
   "keywords": [],
   "author": "",

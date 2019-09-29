@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { RootEpic} from './epics/index';
 import { RootReducer } from './reducers/index';
-import Counter from './components/Counter';
+import Login from './components/Login';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from "react-router"
 
@@ -25,7 +25,7 @@ class App extends Component<any,any>{
                     <Route path="/" compnent={Counter}/>
                     </Switch> */}
                 </MemoryRouter>
-                <Counter/>
+                <Login/>
             </Provider>
         )
     }
