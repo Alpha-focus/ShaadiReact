@@ -1,5 +1,5 @@
 import { ajax } from 'rxjs/ajax';
-import { map} from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 export default class HttpService {
     public headers: any;
@@ -11,16 +11,35 @@ export default class HttpService {
     }
     callServicePOST(action: string, requestData: any) {
         let serviceURL: string;
-        serviceURL = "url"+action;
+        serviceURL = action;
+        serviceURL = "https://api.github.com";
         let contentType = 'application/x-www-form-urlencoded';
         let headerOptions = { 'Content-Type': contentType };
-        return ajax.post(serviceURL, requestData, headerOptions).pipe(map((res: any) => this.processRespData(res)))
+        return ajax.post(serviceURL, requestData, headerOptions).pipe(map((res: any) => this.processRespData(res))
+            , catchError(error => {
+                console.log('error: ', error);
+                return 'Logged In';
+            }))
+
     }
+    callServiceGET(action: string, requestData: any) {
+        let serviceurl=action+requestData;
+        serviceurl='https://api.github.com/users?per_page=5'
+        return  ajax.getJSON(serviceurl).pipe(
+        map((res: any) => this.processRespData(res)),
+        catchError(error => {
+            console.log('error: ', error);
+            return 'Logged In';
+        })
+    );
+}
+
+
     callServicePOSTSync(action: string, requestData: any) {
         requestData.UAPAPPID = '';
         let serviceURL: string;
-        let localversion: any = Math.floor(Math.random() * 99999);   
-        serviceURL = action + "?ver=" + localversion ;
+        let localversion: any = Math.floor(Math.random() * 99999);
+        serviceURL = action + "?ver=" + localversion;
         let contentType = 'application/json';
         // let headerOptions = { 'Content-Type': contentType };
         let xhr = new XMLHttpRequest()
@@ -30,7 +49,7 @@ export default class HttpService {
     }
     processRespData(serviceResponse: any) {
         // let responseObj = serviceResponse.response;
-        let validatedResp: any = { status: true, errorMessage: '', payload: {} };
+        let validatedResp: any = { status: true, errorMessage: '', payload: serviceResponse };
         // let serResp: any = responseObj.serResp;
         validatedResp.status = false;
         validatedResp.errorMessage = serviceResponse;

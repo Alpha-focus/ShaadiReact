@@ -1,22 +1,20 @@
-import {ofType} from 'redux-observable';
-import {map, switchMap, catchError} from 'rxjs/operators';
+import { ofType } from 'redux-observable';
+import { map, switchMap, catchError } from 'rxjs/operators';
 import OCCActionTypes from '../actions/shaadiactiontypes';
-import { of} from 'rxjs';
-// import {ajax} from 'rxjs/ajax';
-import {loginActionResponse} from '../actions/shaadi.action'
-import OCCDataService from '../services/Occ.data.service';
-// const apiCall =(): Observable<any>=>{
-// return ajax.get('http://localhost:8080/mock/OCC_Unbilled_Load_Data.json');
-// }
-export const loginShaadiEpic=(action$:any) => action$.pipe(
-ofType(OCCActionTypes.LOGINACTION), switchMap(({payload})=> OCCDataService.Instance.validateUserDetails(payload)
-.pipe(
-map((response) => {
-console.log('in unbilled resp api',response);
-return loginActionResponse(response);
-}),catchError((error: Error)=>{
-console.log('Error occured!!- ',error);
-return of({type:'',payload:{}});
-})
-))
+import { of } from 'rxjs';
+import { loginActionResponse } from '../actions/shaadi.action'
+import ShaadiDataService from '../services/shaadi.data.service';
+
+
+export const loginShaadiEpic = (action$: any) => action$.pipe(
+    ofType(OCCActionTypes.LOGINACTION), switchMap(({ payload }) => ShaadiDataService.Instance.validateUserDetails(payload)
+        .pipe(
+            map((response) => {
+                console.log('in unbilled resp api', response);
+                return loginActionResponse(response);
+            }), catchError((error: Error) => {
+                console.log('Error occured!!- ', error);
+                return of({ type: '', payload: {} });
+            })
+        ))
 );

@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack",
-    "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline --mode development"
+    "server": "webpack --config ./server.js --progress --colors --watch",
+    "build": "webpack --config ./webpack.config.js  --port 9000 --open --progress --colors --watch",
+    "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline --watch --progress"
   },
   "keywords": [],
   "author": "",
