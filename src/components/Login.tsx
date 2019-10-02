@@ -13,23 +13,30 @@ class Login extends React.Component<any, any> {
 
 
   onSubmit() {
+    this.setState({count:10})
     let payload={a:'sample'}
     this.props.loginAction(payload),()=>{
       console.log('returned to call back ')
     };
   }
+  // static getDerivedStateFromProps(props:any, state:any) {
+  // console.log('Enetred',props,state) 
+  //   return props+state;
+  // }
 
-  componentDidUpdate(prevProps:any){
-    if(prevProps.value !== this.props.value){ alert(prevProps.value) }
- }
+  UNSAFE_componentWillReceiveProps(props:any){
+    console.log('Entered into')
+      if(props.loginActionResponse.login==='Login')
+      {
+        console.log('Entered into if')
+      }
+  }
+  componentDidUpdate(prevProps:any, prevState:any) {
+    console.log(prevProps,prevState)
+  }
 
-  UNSAFE_componentWillUpdate()
-  {
-  console.log('Entrede')
-  }
-  UNSAFE_componentWillReceiveProps(){
-    console.log('Entred')
-  }
+ 
+
 
   render() {
     return (
