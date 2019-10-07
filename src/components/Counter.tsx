@@ -35,7 +35,7 @@ const mapDispatchToProps=()=>{
 
 const mapStateToProps=(state:any)=>{
 return {
-  submitLoginActionResponse:state.submitLoginActionResponse
+  LoginActionResponse:state.LoginActionResponse
 }
 }
 export default connect(mapDispatchToProps,mapStateToProps)(Counter)

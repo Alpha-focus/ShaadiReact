@@ -6,7 +6,8 @@ class Login extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      isLogin:''
     };
     this.onSubmit = this.onSubmit.bind(this)
   }
@@ -19,19 +20,21 @@ class Login extends React.Component<any, any> {
       console.log('returned to call back ')
     };
   }
-  // static getDerivedStateFromProps(props:any, state:any) {
-  // console.log('Enetred',props,state) 
-  //   return props+state;
-  // }
 
-  UNSAFE_componentWillReceiveProps(props:any){
+  static getDerivedStateFromProps(props:any) {
     console.log('Entered into')
       if(props.loginActionResponse.login==='Login')
       {
-        console.log('Entered into if')
+        return {
+          isLogin: props.loginActionResponse.login,
+        };
       }
+
+      return null;
   }
+
   componentDidUpdate(prevProps:any, prevState:any) {
+    console.log("isLoginValue",this.state.isLogin)
     console.log(prevProps,prevState)
   }
 
