@@ -1,10 +1,14 @@
-class ErrorBoundary extends React.Component <any,any>{
+import React, { Component } from 'react';
+
+
+class ErrorBoundary extends Component <any,any>{
     constructor(props:any) {
       super(props);
       this.state = { hasError: false };
-      
+
     }
   
+    
     static getDerivedStateFromError(error:any) {
       // Update state so the next render will show the fallback UI.
       console.log(error)
@@ -26,3 +30,20 @@ class ErrorBoundary extends React.Component <any,any>{
       return this.props.children; 
     }
   }
+  window.onerror = function (msg, url, lineNo, columnNo, error) {
+    
+    var message = [
+      'Message: ' + msg,
+      'URL: ' + url,
+      'Line: ' + lineNo,
+      'Column: ' + columnNo,
+      'Error object: ' + JSON.stringify(error)
+    ].join(' - ');
+
+    console.log(message);  
+}
+
+export default ErrorBoundary;
+
+
+  

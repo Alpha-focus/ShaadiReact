@@ -7,6 +7,7 @@ import Login from './components/Login';
 import { Provider } from 'react-redux';
 import Firstview from './components/Firstview';
 import { BrowserRouter as Router,Switch,Route } from "react-router-dom"
+import ErrorBoundary from './utils/ErrorBoundary';
 
 
 const epicMiddleware= createEpicMiddleware();
@@ -20,14 +21,18 @@ class App extends Component<any,any>{
 
     render(){
         return (
+            
             <Provider store={store}>
+            <ErrorBoundary>
             <Router>
                  <Switch>
                     <Route exact path="/" component={Login} />
                     <Route path="/shaadi" component={Firstview} />
                     </Switch>
                 </Router>
+                </ErrorBoundary>
             </Provider>
+            
         )
     }
 }
