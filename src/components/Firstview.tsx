@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Thirdview from './Thirdview';
+import Secondview from './Secondview';
 
   class Firstview extends React.Component<any, any> {
     constructor(props: any) {
@@ -13,6 +15,7 @@ import { connect } from 'react-redux';
 
     render(){
         return(
+          <div>
     <div className="row">
       <div className="col-lg-6 col-sm-6 col-xl-6 col-md-6 w-100 pl-0 pr-0">
         <img src={'./img/welcome.png'} className="img-fluid user-img w-100" alt="welcome"/>
@@ -38,7 +41,10 @@ import { connect } from 'react-redux';
           </div>
         </div>
       </div>
-    </div> 
+    </div>
+    <Secondview/>
+    <Thirdview/> 
+    </div>
         )
     }
 }

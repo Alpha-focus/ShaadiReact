@@ -14,7 +14,7 @@ class Login extends React.Component<any, any> {
 
 
   onSubmit() {
-    this.setState({count:10})
+    this.props.history.push("/shaadi");
     let payload={a:'sample'}
     this.props.loginAction(payload),()=>{
       console.log('returned to call back ')
@@ -26,6 +26,7 @@ class Login extends React.Component<any, any> {
       if(props.loginActionResponse.login==='Login')
       {
         return {
+          
           isLogin: props.loginActionResponse.login,
         };
       }

@@ -114,7 +114,7 @@ height:650px;
 /* Second View */
 /* third view */
 .third{
-background-image: url("./img/third.png");
+background-image: url("../img/third.png");
 background-color:#540203;
 }
 .third-round-img{

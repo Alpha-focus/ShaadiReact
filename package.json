@@ -5,7 +5,7 @@
   "scripts": {
     "server": "webpack --config ./server.js --progress --colors --watch",
     "build": "webpack --config ./webpack.config.js --port 9000 --open --hot --inline --watch --progress",
-    "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline --watch --progress"
+    "start": "webpack -p && webpack-dev-server --port 9000 --open --inline --watch --progress"
   },
   "keywords": [],
   "author": "",
