@@ -14,6 +14,11 @@ class Login extends React.Component<any, any> {
 
 
   onSubmit() {
+    let a=1;
+    if(a.toPrecision(500))
+    {
+      console.log('Fiyaz')
+    }
     this.props.history.push("/shaadi");
     let payload={a:'sample'}
     this.props.loginAction(payload),()=>{
@@ -23,7 +28,7 @@ class Login extends React.Component<any, any> {
 
   static getDerivedStateFromProps(props:any) {
     console.log('Entered into')
-      if(props.loginActionResponse.login==='Login')
+      if(props.loginActionResponse==='Login')
       {
         return {
           
