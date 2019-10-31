@@ -4,11 +4,11 @@ import { Link } from "react-router-dom"
 class Menu extends Component {
   render(){
     
-    const mystyles = {
-      tabindex:-1,
-      'aria-disabled':'true'
+     const mystyles = {
+       tabindex:-1,
+       'aria-disabled':'true'
       
-   } as React.CSSProperties;
+    } as React.CSSProperties;
   return (
     
     <div className="container-fluid">
@@ -21,14 +21,13 @@ class Menu extends Component {
                                         <li className="nav-item active">
                                             <Link to={'/'} className="nav-link  ml-5 mr-5 mb-1" >Home <span className="sr-only">(current)</span></Link>
                                         </li>
-                                        <li className="nav-item">
+                                         <li className="nav-item">
                                             <Link to={'/welcome'} className="nav-link  ml-5 mr-5 mb-1" >Welcome</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link to={'/ourstory'} className="nav-link  ml-5 mr-5 mb-1" >Our Story</Link>
                                         </li>
                                         <li className="nav-item">
-                                            {/* <link className="nav-link  ml-5 mr-5 mb-1" href="events" >Events</link> */}
                                             <Link to={'/events'} className="nav-link  ml-5 mr-5 mb-1" style={mystyles}>Events</Link>
                                         </li>
                                         <li className="nav-item">
@@ -39,7 +38,7 @@ class Menu extends Component {
                                         </li>
                                         <li className="nav-item">
                                             <Link to={'/faq'}className="nav-link  ml-5 mr-5 mb-1" >FAQ</Link>
-                                        </li>
+                                        </li> 
                                     </ul>
                                 </div>
                             </nav>

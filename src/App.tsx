@@ -12,6 +12,7 @@ import Ourstory from './components/Ourstory';
 import Events from './components/Events';
 import Faq from './components/Faq';
 import Rsvp from './components/Rsvp';
+import Resort from './components/Resort';
 
 
 const epicMiddleware = createEpicMiddleware();
@@ -27,17 +28,25 @@ class App extends Component<any, any>{
         return (
             <Provider store={store}>
                 <ErrorBoundary>
-                    <Router>
-                        
-                        <Switch>
-                            <Route exact path ="/" component={Home} />
-                            <Route exact path ="/welcome" component={WelcomePage} />
-                            <Route exact path ="/ourstory" component={Ourstory} />
-                            <Route  exact path = '/events' component ={Events} />
-                            <Route  exact path = '/faq' component ={Faq} />
-                            <Route  exact path = '/rsvp' component ={Rsvp} />
-                        </Switch>
-                    </Router>
+                    <div className="container-fluid pr-0 pl-0 " >
+                        <div className="row">
+                            <div className="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                <div >
+                                    <Router>
+                                        <Switch>
+                                            <Route exact path="/" component={Home} />
+                                            <Route exact path="/welcome" component={WelcomePage} />
+                                            <Route exact path="/ourstory" component={Ourstory} />
+                                            <Route exact path='/events' component={Events} />
+                                            <Route exact path='/resort' component={Resort} />
+                                            <Route exact path='/faq' component={Faq} />
+                                            <Route exact path='/rsvp' component={Rsvp} />
+                                        </Switch>
+                                    </Router>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </ErrorBoundary>
             </Provider>
 

@@ -10,7 +10,7 @@ li{
   border-bottom: 1px solid grey;
   
 }
-a:hover{
+link:hover{
   color:white;
 }
 li:hover{
