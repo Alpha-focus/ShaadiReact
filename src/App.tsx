@@ -6,7 +6,6 @@ import { RootReducer } from './reducers/index';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import ErrorBoundary from './utils/ErrorBoundary';
-import Home from './components/Home';
 import WelcomePage from './components/Welcome';
 import Ourstory from './components/Ourstory';
 import Events from './components/Events';
@@ -34,8 +33,7 @@ class App extends Component<any, any>{
                                 <div >
                                     <Router>
                                         <Switch>
-                                            <Route exact path="/" component={Home} />
-                                            <Route exact path="/welcome" component={WelcomePage} />
+                                            <Route exact path="/" component={WelcomePage} />
                                             <Route exact path="/ourstory" component={Ourstory} />
                                             <Route exact path='/events' component={Events} />
                                             <Route exact path='/resort' component={Resort} />

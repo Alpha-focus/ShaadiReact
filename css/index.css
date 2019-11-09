@@ -1,67 +1,112 @@
+@font-face {
+  font-family: 'Petita';
+  src: local('Petita'), url(./fonts/PetitaMedium.ttf) format('truetype');
+}
 body {
   overflow-x: hidden;
+  font-family:Petita;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+i{
+  color:#a18759;
 }
-li{
-  border-bottom: 1px solid grey;
-  
-}
-link:hover{
+a:hover{
   color:white;
 }
-li:hover{
-border-bottom: 4px solid rgb(250, 6, 140);
+.menu-hover:hover{
+border-bottom: 4px solid #a18759;
 border-radius:4px ;
 color:white;
 }
 /* Bg image */
 .menu-page{
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  url("../img/bg-1.png");
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  url("./Components/image/bg-1.png");
   background-repeat: no-repeat;
   background-position: center;
   height:100vh;
   background-size: cover; /* Resize the background image to cover the entire container */
 }
+.right-flower{
+  background-image: url('./Components/image/right-flower.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:right bottom; 
+}
+.left-flower{
+  background-image: url('./Components/image/left-flower.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:left bottom; 
+}
+.welcome-flower{
+  position:absolute;
+  left:-170px;
+  top:60px;
+}
+.welcome-border{
+  border: solid 5px #a18759;
+  margin-top: 110px;
+}
+.stay-btn{
+  border:2px solid #a18759;
+  border-radius:10px;
+}
+.faq{
+  color:#c9831f;
+}
+.rsvp-button{
+  background-color: #a18759;
+  border-radius:10px;
+  color:white;
+  opacity: 1;
+}
+.rsvp-button:hover 
+{opacity: 0.6;
+color:white}
+.ourstory{
+  height:100vh;
+}
+.resort{
+  border:2px solid #a18759;
+}
+.resort-nav{
+  border:1px solid #33305c;
+}
+.rsvp-textbox{
+  border:white;
+  border-bottom:1px solid grey;
+  width:30%
+}
+.top-usernames{
+  float: left;
+}
+.logo{
+  float:right;
+}
+.resort-nav-bottom{
+  border-bottom:1px solid #33305c;
+}
 /* Top Head names */
 .welcome-head {
-  position: relative;
     display: inline-block;
-    bottom: 8px;
-    font-size: 30px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    font-family: Rochester;
-  background-color: #ffb200;
 }
 .welcome-head1 {
   position: relative;
     display: inline-block;
     font-size: 30px;
-    font-family: Montserrat;
 }
-h1{
-  font-size:46px;
-  font-family:Rochester;
-}
+
 /* home page */
 .home-text{
   color:white;
 }
 .arrow{
-  padding:14px;
+  padding:8px;
   border-radius: 50%;
-  display: inline-block;
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.18);
+  border:2px solid rgba(161, 156, 156, 0.18);
+  /* background-color: rgba(161, 156, 156, 0.18); */
 }
-.arrow-height{
-height:4vh;
-}
+
 /* welcome page */
 .welcome-text{
   color:black;
@@ -75,7 +120,6 @@ height:4vh;
 }
 /* ourstory */
 .ourstory-text{
-  font-family: Montserrat;
   font-size: 14px;
   line-height: 1.79;
   letter-spacing: normal;
@@ -93,6 +137,9 @@ height:4vh;
 .faq-text{
   padding-left:250px;
 }
+.events-text{
+  padding-left:200px;
+}
 @media (max-width:1000px){
   .faq-text{
     padding-left:170px;
@@ -107,4 +154,9 @@ height:4vh;
   .faq-text{
     padding-left:20px;
   }
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  
+  background-color:white;
+  color:black;
 }
