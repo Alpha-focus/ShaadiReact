@@ -6,9 +6,9 @@ export default class OCCDataService {
         return this._instance || (this._instance = new this());
     }
     validateUserDetails(requestJson: any) {
-        let serviceName = 'LoginService';
+       // let serviceName = 'LoginService';
         let requestData: any = { requestMapping: 'shaadiLaunch' };
         Object.assign(requestData, requestData, requestJson);
-        return HttpService.Instance.callServiceGET(serviceName, requestData);
+        return HttpService.Instance.callServiceGET();
     }
 }

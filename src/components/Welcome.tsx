@@ -1,8 +1,44 @@
 import React,{Component} from 'react';
 import Menu from './Menu';
 import Username from './Usernames';
+import { connect } from 'react-redux';
+import { loginAction } from '../actions/shaadi.action';
 
-class WelcomePage extends Component {
+
+class WelcomePage extends Component<any,any> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      isLogin:{}
+    };
+    
+  }
+
+  static getDerivedStateFromProps(props:any) {
+    console.log('Entered into')
+      if(props.loginActionResponse)
+      {
+        return {          
+          isLogin: props.loginActionResponse.login,
+        };
+      }
+
+      return null;
+  }
+
+  componentDidUpdate(prevProps:any, prevState:any) {
+    console.log("isLoginValue",this.state.isLogin)
+    console.log(prevProps,prevState)
+  }
+
+
+  componentDidMount(){
+    let payload={a:'sample'}
+    this.props.loginAction(payload),()=>{
+      console.log('returned to call back ')
+    };
+
+  }
     render() {
       return(
       <div className="right-flower">
@@ -44,7 +80,13 @@ class WelcomePage extends Component {
             <div className="col-lg-6  col-xl-6 col-md-6 w-100  p-5 " >
             <div className=" container p-5 welcome-border">
             <h1>Welcome</h1>
-            <h5>We can’t wait to welcome you to paradise! We hope you can join us as we celebrate our marriage as husband and wife!</h5>
+            { this.state && this.state.isLogin && this.state.isLogin.eventDetails &&
+            <h5>{this.state.isLogin.eventDetails.eventStories[0].copy}</h5>           
+            }
+            {/* {typeof this.state.isLogin !=='undefined' && typeof this.state.eventDetails !=='undefined'}? */}
+            <h5>{this.state.isLogin}</h5>           
+            {/* <h5>loading</h5> */}
+            
             <button className="btn m-2 rsvp-button">RSVP AND RESERVATIONS</button>
             </div>
             </div>
@@ -56,4 +98,12 @@ class WelcomePage extends Component {
         )
     }
 }
-export default WelcomePage
+const mapDispatchToProps = {
+  loginAction:loginAction
+}
+const mapStateToProps = (state: any) => {
+  return {
+    loginActionResponse: state.loginActionResponse
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(WelcomePage)

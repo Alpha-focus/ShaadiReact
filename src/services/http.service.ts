@@ -22,10 +22,11 @@ export default class HttpService {
             }))
 
     }
-    callServiceGET(action: string, requestData: any) {
-        let serviceurl=action+requestData;
-        serviceurl='https://api.github.com/users?per_page=5'
-        return  ajax.getJSON(serviceurl).pipe(
+    callServiceGET() {
+        let serviceurl='http://clanizon.com:8081/api/v1.0/event/get-event-details-by-name/test'
+        let contentType = 'application/x-www-form-urlencoded';
+        let headerOptions = { 'Content-Type': contentType };
+        return  ajax.getJSON(serviceurl,headerOptions).pipe(
         map((res: any) => this.processRespData(res)),
         catchError(error => {
             console.log('error: ', error);
