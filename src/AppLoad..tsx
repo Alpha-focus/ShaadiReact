@@ -11,30 +11,30 @@ import { loginAction } from './actions/shaadi.action';
 
 class AppLoad extends Component<any, any>{
 
-    // constructor(props: any) {
-    //     super(props);
-    //     this.state = {
-    //       isLogin:{}
-    //     };
+    constructor(props: any) {
+        super(props);
+        this.state = {
+          isLogin:{}
+        };
         
-    //   }
+      }
 
-    // static getDerivedStateFromProps(props:any) {
-    //     console.log('Entered into')
-    //       if(props.loginActionResponse)
-    //       {
-    //         return {          
-    //           isLogin: props.loginActionResponse.login,
-    //         };
-    //       }
+    static getDerivedStateFromProps(props:any) {
+        console.log('Entered into')
+          if(props.loginActionResponse)
+          {
+            return {          
+              isLogin: props.loginActionResponse.login,
+            };
+          }
     
-    //       return null;
-    //   }
+          return null;
+      }
     
-    //   componentDidUpdate(prevProps:any, prevState:any) {
-    //     console.log("isLoginValue",this.state.isLogin)
-    //     console.log(prevProps,prevState)
-    //   }
+      componentDidUpdate(prevProps:any, prevState:any) {
+        console.log("isLoginValue",this.state.isLogin)
+        console.log(prevProps,prevState)
+      }
 
       
   componentDidMount(){
@@ -54,7 +54,9 @@ class AppLoad extends Component<any, any>{
                                 <div >
                                     <Router>
                                         <Switch>
-                                            <Route exact path="/" component={WelcomePage} />
+                                        {this.state && this.state.isLogin && this.state.isLogin.eventDetails &&
+                                            <Route exact path="/" component={() => <WelcomePage isLoginRes={this.state.isLogin.eventDetails.eventStories[0].copy}/>} />
+                                        }
                                             <Route exact path="/ourstory" component={Ourstory} />
                                             <Route exact path='/events' component={Events} />
                                             <Route exact path='/resort' component={Resort} />

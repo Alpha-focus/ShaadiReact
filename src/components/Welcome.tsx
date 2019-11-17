@@ -14,31 +14,31 @@ class WelcomePage extends Component<any,any> {
     
   }
 
-  static getDerivedStateFromProps(props:any) {
-    console.log('Entered into')
-      if(props.loginActionResponse)
-      {
-        return {          
-          isLogin: props.loginActionResponse.login,
-        };
-      }
+  // static getDerivedStateFromProps(props:any) {
+  //   console.log('Entered into')
+  //     if(props.loginActionResponse)
+  //     {
+  //       return {          
+  //         isLogin: props.loginActionResponse.login,
+  //       };
+  //     }
 
-      return null;
-  }
+  //     return null;
+  // }
 
-  componentDidUpdate(prevProps:any, prevState:any) {
-    console.log("isLoginValue",this.state.isLogin)
-    console.log(prevProps,prevState)
-  }
+  // componentDidUpdate(prevProps:any, prevState:any) {
+  //   console.log("isLoginValue",this.state.isLogin)
+  //   console.log(prevProps,prevState)
+  // }
 
 
-  componentDidMount(){
-    // let payload={a:'sample'}
-    // this.props.loginAction(payload),()=>{
-    //   console.log('returned to call back ')
-    // };
+  // componentDidMount(){
+  //   // let payload={a:'sample'}
+  //   // this.props.loginAction(payload),()=>{
+  //   //   console.log('returned to call back ')
+  //   // };
 
-  }
+  // }
     render() {
       return(
       <div className="right-flower">
@@ -80,13 +80,10 @@ class WelcomePage extends Component<any,any> {
             <div className="col-lg-6  col-xl-6 col-md-6 w-100  p-5 " >
             <div className=" container p-5 welcome-border">
             <h1>Welcome</h1>
-            { this.state && this.state.isLogin && this.state.isLogin.eventDetails &&
-            <h5>{this.state.isLogin.eventDetails.eventStories[0].copy}</h5>           
+            { this.props && this.props.isLoginRes &&
+            <h5>{this.props.isLoginRes}</h5>           
             }
-            {/* {typeof this.state.isLogin !=='undefined' && typeof this.state.eventDetails !=='undefined'}? */}    
-            {/* <h5>loading</h5> */}
-            
-            <button className="btn m-2 rsvp-button">RSVP AND RESERVATIONS</button>
+                        <button className="btn m-2 rsvp-button">RSVP AND RESERVATIONS</button>
             </div>
             </div>
             </div> 
