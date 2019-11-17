@@ -33,10 +33,10 @@ class WelcomePage extends Component<any,any> {
 
 
   componentDidMount(){
-    let payload={a:'sample'}
-    this.props.loginAction(payload),()=>{
-      console.log('returned to call back ')
-    };
+    // let payload={a:'sample'}
+    // this.props.loginAction(payload),()=>{
+    //   console.log('returned to call back ')
+    // };
 
   }
     render() {
@@ -83,6 +83,9 @@ class WelcomePage extends Component<any,any> {
             { this.state && this.state.isLogin && this.state.isLogin.eventDetails &&
             <h5>{this.state.isLogin.eventDetails.eventStories[0].copy}</h5>           
             }
+            {/* {typeof this.state.isLogin !=='undefined' && typeof this.state.eventDetails !=='undefined'}? */}    
+            {/* <h5>loading</h5> */}
+            
             <button className="btn m-2 rsvp-button">RSVP AND RESERVATIONS</button>
             </div>
             </div>
