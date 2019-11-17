@@ -43,7 +43,7 @@ class WelcomePage extends Component<any,any> {
       return(
       <div className="right-flower">
         <div className="container-fluid">
-          <Username/>
+          <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag}/>
           <Menu />
         </div>
         <div className="container p-3">

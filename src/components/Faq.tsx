@@ -2,13 +2,13 @@ import React,{Component} from 'react';
 import Menu from './Menu';
 import Username from './Usernames';
 
-class Faq extends Component {
+class Faq extends Component <any,any>{
     render(){
         return (
         <div className="right-flower">
             <div className="left-flower">    
                 <div className="container-fluid "> 
-                <Username/>
+                <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag} />
                 <Menu/>
                     <div className="container">
                     <div className="row">

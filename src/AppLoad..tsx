@@ -11,76 +11,99 @@ import { loginAction } from './actions/shaadi.action';
 
 class AppLoad extends Component<any, any>{
 
-    constructor(props: any) {
-        super(props);
-        this.state = {
-          isLogin:{}
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      isLogin: {},
+      ourstory: {},
+      subEvents: {},
+      eventDate: ''
+    };
+
+  }
+
+  static getDerivedStateFromProps(props: any) {
+    console.log('Entered into')
+    if (props.loginActionResponse) {
+      if (props.loginActionResponse.login) {
+        return {
+          isLogin: props.loginActionResponse.login,
+          ourStory: props.loginActionResponse.login.eventDetails.eventStories,
+          subEvents: props.loginActionResponse.login.eventDetails.subEvents,
+          eventDate: props.loginActionResponse.login.eventDetails.startDateTime,
+          faq: props.loginActionResponse.login.eventDetails.faq || 'empty',
+          hashTag: props.loginActionResponse.login.eventDetails.hasTag || '#empty',
+          groomName: '',
+          brideName: ''
         };
-        
       }
 
-    static getDerivedStateFromProps(props:any) {
-        console.log('Entered into')
-          if(props.loginActionResponse)
-          {
-            return {          
-              isLogin: props.loginActionResponse.login,
-            };
-          }
-    
-          return null;
-      }
-    
-      componentDidUpdate(prevProps:any, prevState:any) {
-        console.log("isLoginValue",this.state.isLogin)
-        console.log(prevProps,prevState)
-      }
+    }
 
-      
-  componentDidMount(){
-    let payload={a:'sample'}
-    this.props.loginAction(payload),()=>{
+    return null;
+  }
+
+  componentDidUpdate(prevProps: any, prevState: any) {
+    console.log("calling componentdidmount")
+    console.log(prevProps, prevState)
+  }
+
+
+  componentDidMount() {
+    let payload = { a: 'sample' }
+    this.props.loginAction(payload), () => {
       console.log('returned to call back ')
     };
 
   }
-    
 
-    render() {
-        return (
-                    <div className="container-fluid pr-0 pl-0 " >
-                        <div className="row">
-                            <div className="col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                                <div >
-                                    <Router>
-                                        <Switch>
-                                        {this.state && this.state.isLogin && this.state.isLogin.eventDetails &&
-                                            <Route exact path="/" component={() => <WelcomePage isLoginRes={this.state.isLogin.eventDetails.eventStories[0].copy}/>} />
-                                        }
-                                            <Route exact path="/ourstory" component={Ourstory} />
-                                            <Route exact path='/events' component={Events} />
-                                            <Route exact path='/resort' component={Resort} />
-                                            <Route exact path='/faq' component={Faq} />
-                                            <Route exact path='/rsvp' component={Rsvp} />
-                                        </Switch>
-                                    </Router>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-        )
-    }
+
+  render() {
+    return (
+      <div className="container-fluid pr-0 pl-0 " >
+        <div className="row">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+            <div>
+              <Router>
+                <Switch>
+                  {this.state && this.state.isLogin && this.state.isLogin.eventDetails &&
+                    <Route exact path="/" component={() => <WelcomePage eventDate={this.state.eventDate} hashTag={this.state.hashTag} isLoginRes={this.state.isLogin.eventDetails.eventStories[0].copy} />} />
+                  }
+                  {
+                    this.state && this.state.ourStory && <Route exact path="/ourstory" component={() => <Ourstory eventDate={this.state.eventDate} hashTag={this.state.hashTag} details={this.state.ourStory} />} />
+                  }
+                  {
+                    this.state && this.state.subEvents && <Route exact path="/events" component={() => <Events eventDate={this.state.eventDate} hashTag={this.state.hashTag} events={this.state.subEvents} />} />
+                  }
+                  {
+                    this.state && this.state.eventDate && <Route exact path='/resort' component={() => <Resort eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
+                  }
+                  {
+                    this.state && this.state.eventDate && <Route exact path='/rsvp' component={() => <Rsvp eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
+                  }
+                  {
+                    this.state && this.state.eventDate && <Route exact path='/faq' component={() => <Faq eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
+                  }
+                 
+                </Switch>
+              </Router>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    )
+  }
 }
 const mapDispatchToProps = {
-    loginAction:loginAction
+  loginAction: loginAction
+}
+const mapStateToProps = (state: any) => {
+  return {
+    loginActionResponse: state.loginActionResponse
   }
-  const mapStateToProps = (state: any) => {
-    return {
-      loginActionResponse: state.loginActionResponse
-    }
-  }
+}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppLoad);  
+export default connect(mapStateToProps, mapDispatchToProps)(AppLoad);
 

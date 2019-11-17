@@ -19,20 +19,20 @@ color:white;
 }
 /* Bg image */
 .menu-page{
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  url("./Components/image/bg-1.png");
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  url("../../img/bg-1.png");
   background-repeat: no-repeat;
   background-position: center;
   height:100vh;
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 .right-flower{
-  background-image: url('./Components/image/right-flower.png');
+  background-image: url('../../img/right-flower.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position:right bottom; 
 }
 .left-flower{
-  background-image: url('./Components/image/left-flower.png');
+  background-image: url('../../img/left-flower.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position:left bottom; 

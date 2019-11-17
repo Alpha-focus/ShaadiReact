@@ -2,13 +2,13 @@ import React,{Component} from 'react';
 import Menu from './Menu';
 import Username from './Usernames';
 
-class Resort extends Component {
+class Resort extends Component<any,any> {
 render(){
   return(
     <div className="right-flower">
       <div className="left-flower">
       <div className="container-fluid">
-      <Username/>
+      <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag}/>
       <Menu/>
         <div className="container p-4">
         <div className="p-4 resort">

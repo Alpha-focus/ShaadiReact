@@ -1,23 +1,47 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import { loginAction } from '../actions/shaadi.action';
+import { connect } from 'react-redux';
+import { format } from 'date-fns';
 
-class Username extends Component {
-  render(){
-  return (
-    <div className="container-fluid p-4">
-      <div className="row flex-column-reverse flex-sm-row">
-        <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
-        <h6 className="top-usernames">October 27, 2014<br></br> #partylikerockstar</h6>
-          </div>
-        <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
-          <h3 className="text-center font-weight-bold">Aparna & Gurbinder</h3>
+class Username extends Component<any, any> {
+  constructor(props: any) {
+    super(props);
+  }
+  // static getDerivedStateFromProps(props:any) {
+  //   console.log('Entered into')
+  //     if(props.loginActionResponse)
+  //     {
+  //       return {          
+  //         details: props.loginActionResponse.login,
+  //       };
+  //     }
+
+  //     return null;
+  // }
+  render() {
+    return (
+      <div className="container-fluid p-4">
+        <div className="row flex-column-reverse flex-sm-row">
+          <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
+            <h6 className="top-usernames">{format(new Date(this.props.eventDate),'MMMM MM, yyyy')}<br></br> {this.props.hashTag}</h6>
           </div>
           <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
-         <img src='../../img/logo.png' alt="shaadi"  className="logo"/>
+            <h3 className="text-center font-weight-bold">Aparna & Gurbinder</h3>
+          </div>
+          <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
+            <img src='../../img/logo.png' alt="shaadi" className="logo" />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+const mapDispatchToProps = {
+  loginAction: loginAction
 }
-
-export default Username;
+const mapStateToProps = (state: any) => {
+  return {
+    loginActionResponse: state.loginActionResponse
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Username);
