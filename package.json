@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "server": "webpack --config ./server.js --host 0.0.0.0 --disable-host-check --progress --colors --watch",
-    "build": "webpack --config ./webpack.config.js --port 9000 --open --hot --inline --watch --progress",
+    "build": "webpack --config ./webpack.config.js --port 9001 --open --hot --inline --watch --progress",
     "watch": "webpack --watch",
-    "start": "webpack -p && webpack-dev-server --host 0.0.0.0 --disable-host-check --port 9000 --open --inline --watch --progress"
+    "start": "webpack -p && webpack-dev-server --host 0.0.0.0 --disable-host-check --port 9001 --open --inline --watch --progress"
   },
   "keywords": [],
   "author": "",
