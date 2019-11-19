@@ -82,7 +82,7 @@ class AppLoad extends Component<any, any>{
                     this.state && this.state.eventDate && <Route exact path='/rsvp' component={() => <Rsvp eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
                   }
                   {
-                    this.state && this.state.eventDate && <Route exact path='/faq' component={() => <Faq eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
+                    this.state && this.state.eventDate && <Route exact path='/faq' component={() => <Faq faqs={this.state.faq} eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
                   }
                  
                 </Switch>

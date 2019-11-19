@@ -16,26 +16,7 @@ class Faq extends Component <any,any>{
                     <div className="faq-text mt-5">
                     <h1 className="faq">FAQ</h1>
                         <div className="p-3 question">
-                            <h4 className="font-weight-bold">How to book a resort ?</h4>
-                            <h6 className="text-justify " >Lorem Ipsum is simply dummy text of the printing 
-                            and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s.</h6>
-                            <hr></hr>
-                            <h4 className="font-weight-bold">How to book a resort ?</h4>
-                            <h6 className="text-justify " >Lorem Ipsum is simply dummy text of the printing 
-                            and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s.</h6>
-                            <hr></hr>
-                            <h4 className="font-weight-bold">How to choose a right flight ?</h4>
-                            <h6 className="text-justify" >Lorem Ipsum is simply dummy text of the printing 
-                            and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s.</h6>
-                            <hr></hr>
-                            <h4 className="font-weight-bold">How to book a resort ?</h4>
-                            <h6 className="text-justify " >Lorem Ipsum is simply dummy text of the printing 
-                            and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s.</h6>
-                            <hr></hr>
+                            {this.props.faqs}
                         </div>
                     </div>
                     </div> 

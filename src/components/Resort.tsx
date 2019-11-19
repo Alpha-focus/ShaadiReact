@@ -21,7 +21,7 @@ render(){
           </div>
           </div>
         </div>
-        <div className="row p-5">
+        <div className="row pt-3">
           <div className="col-lg-3 col-md-3 col-xl-3 col-sm-3 " >
             <div className="resort-nav">
             <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
@@ -30,7 +30,7 @@ render(){
             </div>
             </div>
           </div>
-          <div className="col-lg-5 col-md-5 col-xl-5 col-sm-5">
+          <div className="col-lg-4 col-md-4 col-xl-4 col-sm-4">
             <div className="tab-content" id="v-pills-tabContent">
             <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"> <h3>Three amazing towers</h3>
             <h5>Pyramid tower - Family Friendly</h5>
@@ -63,7 +63,7 @@ render(){
             </div>
             </div>
             </div>
-            <div className="col-lg-4 col-md-4 col-xl-4 col-sm-4">
+            <div className="col-lg-5col-md-5 col-xl-5 col-sm-5">
             <img src='../../img/beach.png' alt="shaadi" className=" img-fluid"/>
             </div>
         </div>

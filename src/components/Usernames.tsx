@@ -23,13 +23,13 @@ class Username extends Component<any, any> {
       <div className="container-fluid p-4">
         <div className="row flex-column-reverse flex-sm-row">
           <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
-            <h6 className="top-usernames">{format(new Date(this.props.eventDate),'MMMM MM, yyyy')}<br></br> {this.props.hashTag}</h6>
+            <h6 className="top-usernames pl-5"><b>{format(new Date(this.props.eventDate),'MMMM MM, yyyy')}<br></br> {this.props.hashTag}</b></h6>
           </div>
           <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
-            <h3 className="text-center font-weight-bold">Aparna & Gurbinder</h3>
+            <h1 className="text-center font-weight-bold">Aparna & Gurbinder</h1>
           </div>
           <div className="col-lg-4 col-sm-4 col-md-4 col-xl-4">
-            <img src='../../img/logo.png' alt="shaadi" className="logo" />
+            <img src='../../img/logo.png' alt="shaadi" className="logo pr-5" />
           </div>
         </div>
       </div>

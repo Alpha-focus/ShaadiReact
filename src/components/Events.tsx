@@ -40,7 +40,7 @@ class Events extends Component<any, any>{
                                                             </ul>
                                                         </div>
                                                         <div className="col-lg-6 col-xl-6 col-md-6 col-sm-6">
-                                            <h6 className="text-justify " >{event.customMessage}</h6>
+                                            <h6 className="text-justify " dangerouslySetInnerHTML={{__html:event.customMessage}}></h6>
                                                         </div>
                                                     </div>
                                                     <hr/>

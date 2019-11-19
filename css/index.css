@@ -74,7 +74,9 @@ color:white}
   border:2px solid #a18759;
 }
 .resort-nav{
-  border:1px solid #33305c;
+  border: 1px solid #33305C;
+  border-radius: 4px;
+  
 }
 .rsvp-textbox{
   border:white;
@@ -130,6 +132,9 @@ color:white}
   letter-spacing: normal;
   color: #33305c;
 }
+.ourstory-avt-text{
+  color: #a18759;
+}
 .our-story-female-div{
   width:20vw;
   margin-left:-285px;
@@ -165,3 +170,20 @@ color:white}
   background-color:white;
   color:black;
 }
+.menu-title{
+  /* font-weight: 600; */
+  color: #111111;
+  /* font-family: PetitaMedium; */
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+}
+.vertical-divider{ 
+  border:         none;
+  background-color: #33305C;
+  opacity: 0.2000000029802322;
+  width: 1px;
+  height: 472.65px;       
+}
+  
