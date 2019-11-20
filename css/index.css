@@ -2,6 +2,38 @@
   font-family: 'Petita';
   src: local('Petita'), url(./fonts/PetitaMedium.ttf) format('truetype');
 }
+::-webkit-scrollbar {
+	width: 10px;
+  background-color: #F5F5F5;
+  display: none;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid #a18759;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+.gbname{
+  font-size: 39px;
+  font-weight: 700;
+  line-height: 45px;
+  /* font-stretch: expanded; */
+  /* --font-family-monospace: auto; */
+}
+
 body {
   overflow-x: hidden;
   font-family:Petita;
@@ -170,6 +202,9 @@ color:white}
   background-color:white;
   color:black;
 }
+.nav-link{
+  padding: 0.5em 2em;
+}
 .menu-title{
   /* font-weight: 600; */
   color: #111111;
@@ -186,4 +221,11 @@ color:white}
   width: 1px;
   height: 472.65px;       
 }
-  
+.nav-item {
+  max-width: 187px;
+    height: 50px;
+    margin: 0.5em 2.0em;
+}
+.nav-link{
+  width: fit-content;
+}
