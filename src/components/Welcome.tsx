@@ -46,7 +46,7 @@ class WelcomePage extends Component<any,any> {
           <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag}/>
           <Menu />
         </div>
-        <div className="container p-3">
+        <div className="container pl-5">
           <div className="row" >
           <div className="col-lg-6  col-xl-6 col-md-6 w-50 pl-0 pr-0">
           <img src="../../img/flower.png" alt="shaadi" className="welcome-flower"/>
@@ -58,13 +58,13 @@ class WelcomePage extends Component<any,any> {
             </ol>
             <div className="carousel-inner">
             <div className="carousel-item active">
-            <img className="d-block w-100"src="../../img/pair-img.png" alt="shaadi"/>
+            <img className="d-block w-70 pl-5"src="../../img/pair-img.png" alt="shaadi"/>
             </div>
             <div className="carousel-item">
-            <img className="d-block w-100" src="../../img/pair-img.png" alt="Second slide"/>
+            <img className="d-block w-70 pl-5" src="../../img/pair-img.png" alt="Second slide"/>
             </div>
             <div className="carousel-item">
-            <img className="d-block w-100" src="../../img/pair-img.png" alt="Third slide"/>
+            <img className="d-block w-70 pl-5" src="../../img/pair-img.png" alt="Third slide"/>
             </div>
             </div>
             {/* <a href="#carouselExampleIndicators" className="carousel-control-prev"  role="button" data-slide="prev">
