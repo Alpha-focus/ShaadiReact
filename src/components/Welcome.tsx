@@ -48,9 +48,9 @@ class WelcomePage extends Component<any,any> {
         </div>
         <div className="container p-3">
           <div className="row" >
-          <div className="col-lg-6  col-xl-6 col-md-6 w-100 pl-0 pr-0">
+          <div className="col-lg-6  col-xl-6 col-md-6 w-50 pl-0 pr-0">
           <img src="../../img/flower.png" alt="shaadi" className="welcome-flower"/>
-            <div id="carouselExampleIndicators" className="carousel slide p-5" data-ride="carousel">
+            <div id="carouselExampleIndicators" className="carousel slide pl-5 pr-5 pt-3" data-ride="carousel">
             <ol className="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -67,23 +67,23 @@ class WelcomePage extends Component<any,any> {
             <img className="d-block w-100" src="../../img/pair-img.png" alt="Third slide"/>
             </div>
             </div>
-            <a href="#carouselExampleIndicators" className="carousel-control-prev"  role="button" data-slide="prev">
+            {/* <a href="#carouselExampleIndicators" className="carousel-control-prev"  role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
             </a>
             <a href="#carouselExampleIndicators" className="carousel-control-next"  role="button" data-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
-            </a>
+            </a> */}
             </div>
             </div>
-            <div className="col-lg-6  col-xl-6 col-md-6 w-100  p-5 " >
-            <div className=" container p-5 welcome-border">
-            <h1>Welcome</h1>
+            <div className="col-lg-6  col-xl-6 col-md-6 w-100" >
+            <div className=" container w-75 p-3 welcome-border">
+            <h2>Welcome</h2>
             { this.props && this.props.isLoginRes &&
-            <h5 dangerouslySetInnerHTML={{__html:this.props.isLoginRes}}></h5>           
+            <h5>{this.props.isLoginRes}</h5>           
             }
-                        <button className="btn m-2 rsvp-button">RSVP AND RESERVATIONS</button>
+                        <button className="btn m-2 p-2 w-100 rsvp-button">RSVP AND RESERVATIONS</button>
             </div>
             </div>
             </div> 
