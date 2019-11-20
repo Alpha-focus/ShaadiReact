@@ -79,11 +79,11 @@ class WelcomePage extends Component<any,any> {
             </div>
             <div className="col-lg-6  col-xl-6 col-md-6 w-100" >
             <div className=" container w-75 p-3 welcome-border">
-            <h2>Welcome</h2>
+            <h2 className="welcome-box-title">Welcome</h2>
             { this.props && this.props.isLoginRes &&
             <h5 dangerouslySetInnerHTML={{__html:this.props.isLoginRes}}></h5>           
             }
-                        <button className="btn m-2 p-2 w-100 rsvp-button">RSVP AND RESERVATIONS</button>
+                        <button className="btn w-100 rsvp-button">RSVP AND RESERVATIONS  ></button>
             </div>
             </div>
             </div> 

@@ -79,6 +79,12 @@ color:white;
   left:-170px;
   top:60px;
 }
+.welcome-box-title{
+  font-size: 36px;
+    font-weight: 700;
+    line-height: 43px;
+    text-align: left;
+}
 .welcome-border{
   border: solid 5px #a18759;
   margin-top: 110px;
@@ -92,8 +98,12 @@ color:white;
 }
 .rsvp-button{
   background-color: #a18759;
-  border-radius:10px;
+  border-radius:0em !important;
+  height: 62px;
   color:white;
+  font-weight: normal;
+    line-height: 22px;
+    text-align: center;
   opacity: 1;
 }
 .rsvp-button:hover 
