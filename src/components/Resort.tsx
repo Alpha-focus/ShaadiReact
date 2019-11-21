@@ -10,7 +10,7 @@ render(){
       <div className="container-fluid">
       <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag}/>
       <Menu/>
-        <div className="container p-4">
+        <div className="container p-4 animate">
         <div className="p-4 resort">
           <div className="row">
           <div className="col-lg-8 col-xl-8 col-sm-8 col-md-8">

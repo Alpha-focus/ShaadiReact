@@ -11,7 +11,7 @@ import Username from './Usernames';
           <div className="container-fluid">
           <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag} />
           <Menu/>
-            <div className="container">
+            <div className="container animate">
               <div className="row">
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xl-12">
                   <div className="text-center mt-5">

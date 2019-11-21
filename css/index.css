@@ -33,7 +33,13 @@
   /* font-stretch: expanded; */
   /* --font-family-monospace: auto; */
 }
-
+.animate{
+  animation: animatecontainer 2s 1;
+}
+@keyframes animatecontainer{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 body {
   overflow-x: hidden;
   font-family:Petita;
@@ -180,10 +186,10 @@ color:white}
 }
 /* ourstory */
 .ourstory-text{
-  font-size: 14px;
-  line-height: 1.79;
-  letter-spacing: normal;
-  color: #33305c;
+  font-size: 16px;
+    line-height: 1.79;
+    letter-spacing: normal;
+    color: #33305c;
 }
 .ourstory-avt-text{
   color: #a18759;

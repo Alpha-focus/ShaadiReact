@@ -16,7 +16,7 @@ class Events extends Component<any, any>{
                         <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag} />
                         <Menu />
                     </div>
-                    <div className="container justify-content-center">
+                    <div className="container animate justify-content-center">
                         <div className="row">
                             <div className="col-lg-10 col-md-10 col-xl-10 col-sm-10 ">
                                 <div className="faq-text mt-5">
