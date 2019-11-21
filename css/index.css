@@ -57,7 +57,7 @@ color:white;
 } */
 .menu-hover-active{
   border-bottom: 4px solid #a18759;
-  border-radius:4px ;
+  /* border-radius:4px ; */
   animation: fadein 2s 1;
   }
 /* .menu-hover-active::after{
@@ -93,7 +93,7 @@ color:white;
 }
 .welcome-flower{
   position:absolute;
-  left:-170px;
+  left: -6.5em;
   top:60px;
 }
 .welcome-box-title{
@@ -250,7 +250,7 @@ color:white}
 }
 .nav-item {
   max-width: 187px;
-    height: 50px;
+    height: 40px;
     margin: 0.5em 2.0em;
 }
 .nav-link{

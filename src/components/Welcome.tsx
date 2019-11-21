@@ -58,13 +58,13 @@ class WelcomePage extends Component<any, any> {
                 </ol>
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                    <img className="d-block w-70 pl-5" src="../../img/pair-img.png" alt="shaadi" />
+                    <img className="d-block w-70 pl-4" src="../../img/pair-img.png" alt="shaadi" />
                   </div>
                   <div className="carousel-item">
-                    <img className="d-block w-70 pl-5" src="../../img/pair-img.png" alt="Second slide" />
+                    <img className="d-block w-70 pl-4" src="../../img/pair-img.png" alt="Second slide" />
                   </div>
                   <div className="carousel-item">
-                    <img className="d-block w-70 pl-5" src="../../img/pair-img.png" alt="Third slide" />
+                    <img className="d-block w-70 pl-4" src="../../img/pair-img.png" alt="Third slide" />
                   </div>
                 </div>
                 {/* <a href="#carouselExampleIndicators" className="carousel-control-prev"  role="button" data-slide="prev">
