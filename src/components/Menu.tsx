@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-class Menu extends Component {
+import { Link} from 'react-router-dom';
+//const r = window.location.pathname;
+class Menu extends Component<any,any> {
+  constructor(props: any){
+    super(props);
+    this.state={
+      route:''
+    }
+  }
+  componentDidMount(){
+   this.setState({route:window.location.pathname});
+    //const route = window.location.pathname;
+    console.log('path',this.state.route);
+  }
   render() {
     return (
       <div className="row">
@@ -12,22 +24,22 @@ class Menu extends Component {
           </button>
           <div className="collapse navbar-collapse justify-content-center " id="navbarNav">
             <ul className="navbar-nav" >
-              <li className="nav-item active menu-hover ">
+              <li className={"nav-item active menu-hover" + (this.state.route == "/" ? " menu-hover-active" : "")}>
                 <Link className="nav-link mb-1 menu-title" to="/">WELCOME</Link>
               </li>
-              <li className="nav-item active menu-hover">
+              <li className={"nav-item active menu-hover" + (this.state.route == "/ourstory" ? " menu-hover-active" : "")}>
                 <Link className="nav-link mb-1 menu-title" to="ourstory">OUR STORY</Link>
               </li>
-              <li className="nav-item active menu-hover">
+              <li className={"nav-item active menu-hover" + (this.state.route == "/events" ? " menu-hover-active" : "")}>
                 <Link className="nav-link mb-1 menu-title" to="events">EVENTS</Link>
               </li>
-              <li className="nav-item active menu-hover">
-                <Link className="nav-link mb-1 menu-title" to="resort">RESORT</Link>
+              <li className={"nav-item active menu-hover" + (this.state.route == "/resort" ? " menu-hover-active" : "")}>
+                <Link className="nav-link mb-1 menu-title" to="resort">OUR VENUE</Link>
               </li>
-              <li className="nav-item active menu-hover">
+              <li className={"nav-item active menu-hover" + (this.state.route == "/rsvp" ? " menu-hover-active" : "")}>
                 <Link className="nav-link mb-1  menu-title" to="rsvp">RSVP & RERESVATION</Link>
               </li>
-              <li className="nav-item active menu-hover">
+              <li className={"nav-item active menu-hover" + (this.state.route == "/faq" ? " menu-hover-active" : "")}>
                 <Link className="nav-link mb-1 menu-title" to="faq">FAQ</Link>
               </li>
             </ul>

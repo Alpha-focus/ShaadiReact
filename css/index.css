@@ -44,16 +44,27 @@ i{
 a:hover{
   color:white;
 }
-.menu-hover:hover{
+/* .menu-hover:hover{
 border-bottom: 4px solid #a18759;
 border-radius:4px ;
 color:white;
-}
+} */
 .menu-hover-active{
   border-bottom: 4px solid #a18759;
   border-radius:4px ;
-  color:white;
+  animation: fadein 2s 1;
   }
+/* .menu-hover-active::after{
+  animation: shine 1s .2s ease-in-out forwards;
+} */
+@keyframes fadein{
+  0% {border-bottom-color:transparent;}
+  100% {border-bottom-color: #a18759;}
+  }
+
+@keyframes shine{
+  100% { transform: rotate(-30deg) translate(320%,120%);}
+}
 /* Bg image */
 .menu-page{
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  url("../../img/bg-1.png");

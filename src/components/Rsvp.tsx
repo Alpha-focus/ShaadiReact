@@ -8,7 +8,7 @@ import Username from './Usernames';
     return (
     <div className="right-flower">
       <div className="left-flower">
-          <div className="container-fluid pr-0  ourstory">
+          <div className="container-fluid">
           <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag} />
           <Menu/>
             <div className="container">
