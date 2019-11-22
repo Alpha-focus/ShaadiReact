@@ -25,6 +25,7 @@ import Username from './Usernames';
                 </div>
               </div>
               <img src="../../img/left-flower.png" className="left-flr" />
+              <img src="../../img/right-flower.png" className="right-flr"/>
             </div>
           </div>
       </div>
