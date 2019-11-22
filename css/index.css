@@ -117,6 +117,11 @@ color:white;
 .faq{
   color:#c9831f;
 }
+.rsvp-text{
+  font-weight: 700;
+    /* font-weight: bold; */
+    line-height: 40px;
+}
 .rsvp-button{
   background-color: #a18759;
   border-radius:0em !important;
@@ -130,6 +135,16 @@ color:white;
 .rsvp-button:hover 
 {opacity: 0.6;
 color:white}
+.rsvp-textbox:focus{
+  outline: none;
+  border-color:#8b5e10;
+  /* box-shadow:0 0 10px #8b5e10; */
+}
+.left-flr{
+  position: fixed;
+  left: -1em;
+  bottom: -7.8em;
+}
 .ourstory{
   height:100vh;
 }
@@ -144,7 +159,10 @@ color:white}
 .rsvp-textbox{
   border:white;
   border-bottom:1px solid grey;
-  width:30%
+  position: relative;
+    top: 13px;
+    width: 32em;
+    height: 2.5em;
 }
 .top-usernames{
   float: left;
@@ -170,10 +188,12 @@ color:white}
   color:white;
 }
 .arrow{
-  padding:8px;
+  padding:9px 12px 12px 15px;;
   border-radius: 50%;
   backdrop-filter: blur(10px);
   border:2px solid rgba(161, 156, 156, 0.18);
+  position: relative;
+  left: -2.5em;
   /* background-color: rgba(161, 156, 156, 0.18); */
 }
 

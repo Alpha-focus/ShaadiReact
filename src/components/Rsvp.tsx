@@ -7,7 +7,7 @@ import Username from './Usernames';
   render(){
     return (
     <div className="right-flower">
-      <div className="left-flower">
+      <div>
           <div className="container-fluid">
           <Username eventDate={this.props.eventDate} hashTag={this.props.hashTag} />
           <Menu/>
@@ -15,12 +15,16 @@ import Username from './Usernames';
               <div className="row">
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xl-12">
                   <div className="text-center mt-5">
-                  <h2 className="text-center">Please enter your email</h2><h2 className="text-center">to RSVP Reserve your room </h2>
+                  <h2 className="text-center rsvp-text">Please enter your email</h2>
+                  <h2 className="text-center rsvp-text">to RSVP Reserve your room </h2>
+                  <div>
                   <input type="email" placeholder="Enter Your email" className="mt-5 rsvp-textbox"/>
                   <a href="welcome" className="arrow" ><img src="../../img/arrow.png" alt="shaadi"/></a>
                   </div>
+                  </div>
                 </div>
               </div>
+              <img src="../../img/left-flower.png" className="left-flr" />
             </div>
           </div>
       </div>
