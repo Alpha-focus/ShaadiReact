@@ -18,11 +18,11 @@ class Menu extends Component<any,any> {
       <div className="row">
       <div className="col-lg-1 col-sm-1 col-md-1 col-xl-1 ml-3"></div>
       <div className="col-lg-10 col-sm-10 col-md-10 col-xl-10">
-        <nav className="navbar navbar-expand-lg navbar-light ">
+        <nav className="navbar navbar-expand-lg navbar-light pt-0">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon mobileNavBar-link"></span>
           </button>
-          <div className="collapse navbar-collapse justify-content-center " id="navbarNav">
+          <div className="collapse navbar-collapse justify-space-around" id="navbarNav">
             <ul className="navbar-nav" >
               <li className={"nav-item active menu-hover" + (this.state.route == "/" ? " menu-hover-active" : "")}>
                 <Link className="nav-link mb-1 menu-title" to="/">WELCOME</Link>

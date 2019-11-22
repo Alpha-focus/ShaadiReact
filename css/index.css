@@ -26,6 +26,10 @@
 ::-webkit-scrollbar-thumb:active {
   background: linear-gradient(left, #22ADD4, #1E98BA);
 }
+.justify-space-around{
+  justify-content: space-around;
+}
+
 .gbname{
   font-size: 39px;
   font-weight: 700;
@@ -204,10 +208,21 @@ color:white}
 }
 /* FAQ */
 .faq-text{
-  padding-left:250px;
+  padding: 0em 12em;
 }
 .events-text{
   padding-left:200px;
+}
+.events-left-text{
+  width: 86px;
+    /* height: 126px; */
+    font-family: Petita;
+    /* font-size: 15px; */
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    color: #333333;
 }
 @media (max-width:1000px){
   .faq-text{
