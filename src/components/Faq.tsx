@@ -15,9 +15,7 @@ class Faq extends Component <any,any>{
                     <div className="col-lg-8 col-md-8 col-xl-8 col-sm-8 ">
                     <div className="faq-text mt-5">
                     <h1 className="faq">FAQ</h1>
-                        <div className="p-3 question">
-                            {this.props.faqs}
-                        </div>
+                        <div className="p-3 question" dangerouslySetInnerHTML={{ __html: this.props.faqs }}/>
                     </div>
                     </div> 
                     </div>

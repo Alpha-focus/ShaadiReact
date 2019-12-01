@@ -33,9 +33,8 @@ render(){
           <div className="col-lg-4 col-md-4 col-xl-4 col-sm-4">
             <div className="tab-content" id="v-pills-tabContent">
             <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"> <h3>Three amazing towers</h3>
-            <h5>Pyramid tower - Family Friendly</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scramble.</p>
+            <h5>{this.props.property.propertyName}</h5>
+            <p>{this.props.property.propertyDescription}</p>
             <h5>Room choices at pyramid tower:</h5>
             <ul>
             <li>
@@ -54,9 +53,8 @@ render(){
           </div>
             <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"> 
             <h3>Three amazing towers</h3>
-            <h5>Pyramid tower - Family Friendly</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scramble.</p>
+            <h5>{this.props.property.propertyName}</h5>
+            <p>{this.props.property.propertyDescription}</p>
             <h5>Occupancy Rules</h5>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s.</p>
             <button className="btn stay-btn">Stays at $ 150 / Adult / Night</button>

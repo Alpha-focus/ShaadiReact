@@ -31,6 +31,7 @@ class AppLoad extends Component<any, any>{
           ourStory: props.loginActionResponse.login.eventDetails.eventStories,
           subEvents: props.loginActionResponse.login.eventDetails.subEvents,
           eventDate: props.loginActionResponse.login.eventDetails.startDateTime,
+          property:props.loginActionResponse.login.eventDetails.property,
           faq: props.loginActionResponse.login.eventDetails.faq || 'empty',
           hashTag: props.loginActionResponse.login.eventDetails.hasTag || '#empty',
           groomName: '',
@@ -76,7 +77,7 @@ class AppLoad extends Component<any, any>{
                     this.state && this.state.subEvents && <Route exact path="/events" component={() => <Events eventDate={this.state.eventDate} hashTag={this.state.hashTag} events={this.state.subEvents} />} />
                   }
                   {
-                    this.state && this.state.eventDate && <Route exact path='/resort' component={() => <Resort eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
+                    this.state && this.state.eventDate && <Route exact path='/resort' component={() => <Resort eventDate={this.state.eventDate} hashTag={this.state.hashTag} property={this.state.property}/>} />
                   }
                   {
                     this.state && this.state.eventDate && <Route exact path='/rsvp' component={() => <Rsvp eventDate={this.state.eventDate} hashTag={this.state.hashTag} />} />
